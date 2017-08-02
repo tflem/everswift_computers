@@ -1,3 +1,248 @@
 // Place all the styles related to the StaticPage controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url('https://fonts.googleapis.com/css?family=Arimo:700|PT+Sans+Narrow');
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.valign-wrapper { height: 100%; }
+
+*, *:before, *:after { box-sizing: inherit; }
+
+html,
+body {
+    background-color: #FFF;
+    color: #000;
+    font-family: 'Arimo', sans-serif;
+    font-size: 110%;
+    text-rendering: optimizeLegibility;
+}
+
+h1 {	
+	font-family: 'PT Sans Narrow', sans-serif;	
+}
+
+/* -------------------------------------------- */
+/* Reusable Elements */
+/* -------------------------------------------- */
+
+.row {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 40px 0;
+}
+
+.footer-box, .copyright-box { text-align: center; }
+
+/* ------ Headings ------ */
+
+h2 {
+    font-family: 'PT Sans Narrow', sans-serif;
+    color: #000;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h2:after {
+    display: block;
+    top: -10px;
+    height: 2px;
+    background-color: #4E342E;
+    content: " ";
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 35px;
+}
+
+h6 {
+    text-align: center;
+    margin: 2px 0 auto;
+}
+
+.card-panel {
+    margin: 0 !important;
+}
+
+/* ------ Paragraphs ------ */
+
+.intro p {
+    line-height: 145%;
+    width: 70%;
+    margin-left: 15%;
+    font-size: 100%;
+}
+
+.our-products img:hover { opacity: 0.8; }
+
+.btn-large:hover,
+.btn-large:active {
+    border: 1px solid #FFF;
+}
+
+.our-services,
+.about-us {
+    
+    background-color: #F1F1F1;
+}
+
+.about-us img {
+    max-width: 100%;
+}
+
+/* -------------------------------------------- */
+/* Header */
+/* -------------------------------------------- */
+
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7),
+                                      rgba(0, 0, 0, 0.5)), url('hero_bg.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+/* -------------------------------------------- */
+/* Blog Entries */
+/* -------------------------------------------- */
+
+.blogs,
+.blog-post a {
+    background-color: #F4F4F4;
+    line-height: 145%;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    font-family: 'Raleway', sans-serif;
+}
+
+.blog-post a:hover { color: teal; }
+
+/* -------------------------------------------- */
+/* Contact Form */
+/* -------------------------------------------- */
+
+.contact-us {
+    background-color: #F4F4F4;
+}
+
+form { margin: 25px auto; }
+
+[type="submit"] {
+    font-family: 'Raleway', sans-serif;
+    width: 100%;
+    background: teal;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+    color: #FFF;
+    font-size: 24px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: all 0.3s;
+    margin-top: -4px;
+    font-weight: 700;
+}
+[type="submit"]:hover { background: teal; }
+
+
+/* -------------------------------------------- */
+/* Footer */
+/* -------------------------------------------- */
+
+footer {
+    background-color: #4E342E;
+    text-align: center;
+    padding: 25px;
+    font-size: 75%;
+    color: white;
+}
+
+footer a {
+    text-decoration-color: #FFF;
+    color: #FFF;
+}
+
+.address,
+.hours { margin-bottom: 10px; }
+
+@media screen and (min-width: 1300px) {
+    .address,
+    .number-and-email {
+        border-right-width: 1px;
+        border-right-style: solid;
+        border-right-color: #FFF;
+  }
+}
+
+/* -------------------------------------------- */
+/* Copyright */
+/* -------------------------------------------- */
+
+.copyright {
+    padding: 10px 0;
+    box-sizing: border-box;
+    height: auto;
+    color: white;
+    overflow: hidden;
+    font-size: 75%;
+    border-top: 0 solid transparent;
+    border-top-width: 1px;
+    background-color: #000;
+}
+
+.ion-heart { color: #E74C3C; }
+
+.social-icons {
+    list-style: none;
+    float: none;
+    color: #4E342E;
+}
+
+.social-icons li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.social-icons li:last-child { margin-right: 0; }
+
+.social-icons li a:link,
+.social-icons li a:visited {
+    text-decoration: none;
+    border: 0;
+    color: #4E342E;
+    -webkit-transition: color 0.3s;
+    transition: color 0.3s;
+}
+
+.social-icons li a:link,
+.social-icons li a:visited {
+    font-size: 100%;
+}
+
+.ion-social-twitter,
+.ion-social-linkedin,
+.ion-social-github {
+    -webkit-transition: color 0.3s;
+    transition: color 0.3s;
+}
+
+.ion-social-twitter:hover { color: #00ACED; }
+
+.ion-social-linkedin:hover { color: #0077B5; }
+
+.ion-social-github:hover { color: #4078C0; }
+
+
+
+

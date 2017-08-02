@@ -3,12 +3,54 @@
   <head>
     <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all',
+                                              'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+      </script>
+    <![endif]-->
   </head>
+  
 
-  <body>
-    <%= yield %>
+<body>
+  <header class="navbar-fixed">
+    <aside>
+      <ul class="side-nav" id="slide-out" style="transform: translateX(-100%);">
+        <li><a href=""></a></li>
+      </ul>
+    </aside>
+    <nav class="brown darken-3">
+      <div class="nav-wrapper container">
+        <a class="button-collapse show-on-medium" data-activates="slide-out"
+          data-turbolinks="false" href="#" id="sidenav">
+          <i class="material-icons right">menu</i>
+        </a>
+        <a href="#" class="brand-logo right">EverSwift Computers</a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li><%= link_to "Home",   '#' %></li>
+          <li><%= link_to "Services",   '#' %></li>
+          <li><%= link_to "Products", '#' %></li>
+          <li><%= link_to "About Us", '#' %></li>
+        </ul>
+      </div>
+    </nav>
+</header>  
+
+<main>
+  <div class="hero no-pad-bot cover" id="index-banner">
+    <div class="valign-wrapper">
+      <div class="row">
+        <h1 class="left-align white-text">Houston's Choice for Computer Sales and Repairs</h1>
+          <a class="btn-large waves-effect waves-dark brown darken-1 white-text" href="#" id="learn-more"><i class="material-icons right">help</i>Learn More</a>
+          <a class="btn-large waves-effect waves-dark brown darken-1 white-text" href="#" id="create-ticket"><i class="material-icons right">report</i>Create a Ticket</a>
+        </div>
+      </div>
+     </div>
+     <div class="card-panel no-padding brown darken-3">
+       <div class="row"><br></div>
+     </div>
+</main>
+    <%= yield %>    
   </body>
 </html>

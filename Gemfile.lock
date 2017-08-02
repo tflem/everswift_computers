@@ -55,6 +55,8 @@ GEM
     erubi (1.6.1)
     execjs (2.7.0)
     ffi (1.9.18)
+    font-ionicons-rails (2.0.1.5)
+      railties (>= 3.2, < 6.0)
     formatador (0.2.5)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
@@ -87,8 +89,6 @@ GEM
     lumberjack (1.0.12)
     mail (2.6.6)
       mime-types (>= 1.16, < 4)
-    material_icons (2.2.1)
-      railties (>= 3.2)
     materialize-sass (0.100.1)
       sass (~> 3.3)
     method_source (0.8.2)
@@ -201,12 +201,12 @@ PLATFORMS
 DEPENDENCIES
   byebug (= 9.0.6)
   coffee-rails (= 4.2.2)
+  font-ionicons-rails
   guard (= 2.13.0)
   guard-minitest (= 2.4.4)
   jbuilder (= 2.7.0)
   jquery-rails (= 4.3.1)
   listen (= 3.0.8)
-  material_icons
   materialize-sass
   minitest-reporters (= 1.1.14)
   pg (~> 0.18)
