@@ -82,6 +82,10 @@ h6 {
     font-size: 100%;
 }
 
+.about-us p {
+    font-size: 100%;
+}
+
 .our-products img:hover { opacity: 0.8; }
 
 .btn-large:hover,
@@ -174,7 +178,8 @@ footer a {
 }
 
 .address,
-.hours { margin-bottom: 10px; }
+.hours,
+.number-and-email { margin-bottom: 10px; }
 
 @media screen and (min-width: 1300px) {
     .address,
