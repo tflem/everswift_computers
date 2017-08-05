@@ -4,11 +4,24 @@
 
 @import url('https://fonts.googleapis.com/css?family=Arimo:700|PT+Sans+Narrow');
 
+/* -------------------------------------------- */
+/* Mixins, Variables, Etc. */
+/* -------------------------------------------- */
+
+$dark-brown: #4E342E;
+$twitter-blue: #00ACED;
+$linkedin-blue: #0077B5;
+$github-blue: #4078C0;
+$red-heart: #E74C3C;
+$white: #FFF;
+$black: #000;
+$secondary-bg: #F1F1F1;
+
 * {
-    margin: 0;
-    padding: 0;
-    outline: none;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
 }
 
 .valign-wrapper { height: 100%; }
@@ -17,15 +30,15 @@
 
 html,
 body {
-    background-color: #FFF;
-    color: #000;
-    font-family: 'Arimo', sans-serif;
-    font-size: 110%;
-    text-rendering: optimizeLegibility;
+  background-color: $white;
+  color: $black;
+  font-family: 'Arimo', sans-serif;
+  font-size: 110%;
+  text-rendering: optimizeLegibility;
 }
 
-h1 {	
-	font-family: 'PT Sans Narrow', sans-serif;	
+h1 {
+	font-family: 'PT Sans Narrow', sans-serif;
 }
 
 /* -------------------------------------------- */
@@ -33,74 +46,12 @@ h1 {
 /* -------------------------------------------- */
 
 .row {
-    max-width: 1140px;
-    margin: 0 auto;
+  max-width: 1140px;
+  margin: 0 auto;
 }
 
 section {
-    padding: 40px 0;
-}
-
-.footer-box, .copyright-box { text-align: center; }
-
-/* ------ Headings ------ */
-
-h2 {
-    font-family: 'PT Sans Narrow', sans-serif;
-    color: #000;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-h2:after {
-    display: block;
-    top: -10px;
-    height: 2px;
-    background-color: #4E342E;
-    content: " ";
-    width: 100px;
-    margin: 0 auto;
-    margin-top: 30px;
-    margin-bottom: 35px;
-}
-
-h6 {
-    text-align: center;
-    margin: 2px 0 auto;
-}
-
-.card-panel {
-    margin: 0 !important;
-}
-
-/* ------ Paragraphs ------ */
-
-.intro p {
-    line-height: 145%;
-    width: 70%;
-    margin-left: 15%;
-    font-size: 100%;
-}
-
-.about-us p {
-    font-size: 100%;
-}
-
-.our-products img:hover { opacity: 0.8; }
-
-.btn-large:hover,
-.btn-large:active {
-    border: 1px solid #FFF;
-}
-
-.our-services,
-.about-us {
-    
-    background-color: #F1F1F1;
-}
-
-.about-us img {
-    max-width: 100%;
+  padding: 40px 0;
 }
 
 /* -------------------------------------------- */
@@ -108,73 +59,79 @@ h6 {
 /* -------------------------------------------- */
 
 .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7),
                                       rgba(0, 0, 0, 0.5)), url('hero_bg.jpeg');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
 }
 
-/* -------------------------------------------- */
-/* Blog Entries */
-/* -------------------------------------------- */
+/* ------ Buttons ------ */
 
-.blogs,
-.blog-post a {
-    background-color: #F4F4F4;
-    line-height: 145%;
-    font-weight: 700;
-    text-align: center;
-    text-decoration: none;
-    color: #000;
-    font-family: 'Raleway', sans-serif;
+.btn-large:hover,
+.btn-large:active {
+    border: 1px solid $white;
 }
 
-.blog-post a:hover { color: teal; }
+/* ------ Headings ------ */
 
-/* -------------------------------------------- */
-/* Contact Form */
-/* -------------------------------------------- */
+h2 {
+  font-family: 'PT Sans Narrow', sans-serif;
+  color: $black;
+  text-align: center;
+  margin-bottom: 30px;
+  &:after {
+    display: block;
+    top: -10px;
+    height: 2px;
+    background-color: $dark-brown;
+    content: " ";
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 35px;
+    }
+  }
 
-.contact-us {
-    background-color: #F4F4F4;
+h6 {
+  text-align: center;
+  margin: 2px 0 auto;
 }
 
-form { margin: 25px auto; }
-
-[type="submit"] {
-    font-family: 'Raleway', sans-serif;
-    width: 100%;
-    background: teal;
-    border-radius: 5px;
-    border: 0;
-    cursor: pointer;
-    color: #FFF;
-    font-size: 24px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    transition: all 0.3s;
-    margin-top: -4px;
-    font-weight: 700;
+.card-panel {
+  margin: 0 !important;
 }
-[type="submit"]:hover { background: teal; }
 
+/* ------ Company Content ------ */
+
+.intro p {
+  line-height: 145%;
+  width: 70%;
+  margin-left: 15%;
+  font-size: 100%;
+}
+
+.our-services,
+.about-us { background-color: $secondary-bg; }
+
+.our-products img:hover { opacity: 0.8; }
+
+.about-us p { font-size: 100%; }
 
 /* -------------------------------------------- */
 /* Footer */
 /* -------------------------------------------- */
 
 footer {
-    background-color: #4E342E;
-    text-align: center;
-    padding: 25px;
-    font-size: 75%;
-    color: white;
-}
-
-footer a {
-    text-decoration-color: #FFF;
-    color: #FFF;
+  background-color: $dark-brown;
+  text-align: center;
+  padding: 25px;
+  font-size: 85%;
+  color: $white;
+  a {
+    text-decoration-color: $white;
+    color: $white;
+    }
 }
 
 .address,
@@ -182,11 +139,11 @@ footer a {
 .number-and-email { margin-bottom: 10px; }
 
 @media screen and (min-width: 1300px) {
-    .address,
-    .number-and-email {
-        border-right-width: 1px;
-        border-right-style: solid;
-        border-right-color: #FFF;
+  .address,
+  .number-and-email {
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: $white;
   }
 }
 
@@ -195,59 +152,48 @@ footer a {
 /* -------------------------------------------- */
 
 .copyright {
-    padding: 10px 0;
-    box-sizing: border-box;
-    height: auto;
-    color: white;
-    overflow: hidden;
-    font-size: 75%;
-    border-top: 0 solid transparent;
-    border-top-width: 1px;
-    background-color: #000;
+  padding: 10px 0;
+  box-sizing: border-box;
+  height: auto;
+  color: $white;
+  overflow: hidden;
+  font-size: 85%;
+  border-top: 0 solid transparent;
+  border-top-width: 1px;
+  background-color: $black;
 }
 
-.ion-heart { color: #E74C3C; }
+.ion-heart { color: $red-heart; }
 
 .social-icons {
-    list-style: none;
-    float: none;
-    color: #4E342E;
-}
-
-.social-icons li {
+  list-style: none;
+  float: none;
+  color: $dark-brown;
+  li {
     display: inline-block;
     margin-right: 20px;
-}
-
-.social-icons li:last-child { margin-right: 0; }
-
-.social-icons li a:link,
-.social-icons li a:visited {
-    text-decoration: none;
-    border: 0;
-    color: #4E342E;
-    -webkit-transition: color 0.3s;
-    transition: color 0.3s;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
 }
 
 .social-icons li a:link,
 .social-icons li a:visited {
-    font-size: 100%;
+  text-decoration: none;
+  border: 0;
+  color: $dark-brown;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
 }
 
 .ion-social-twitter,
 .ion-social-linkedin,
 .ion-social-github {
-    -webkit-transition: color 0.3s;
-    transition: color 0.3s;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
 }
 
-.ion-social-twitter:hover { color: #00ACED; }
-
-.ion-social-linkedin:hover { color: #0077B5; }
-
-.ion-social-github:hover { color: #4078C0; }
-
-
-
-
+.ion-social-twitter:hover { color: $twitter-blue; }
+.ion-social-linkedin:hover { color: $linkedin-blue; }
+.ion-social-github:hover { color: $github-blue; }
