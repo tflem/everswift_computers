@@ -18,7 +18,6 @@ gem 'jbuilder',     '2.7.0'
 gem "font-ionicons-rails"
 
 group :development, :test do
-  gem 'pg', '~> 0.18'
   gem 'byebug',  '9.0.6', platform: :mri
 end
 
