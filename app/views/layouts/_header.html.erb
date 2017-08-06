@@ -1,26 +1,32 @@
 <!-- Header -->
-<header class="navbar-fixed">
-    <aside>
-      <ul class="side-nav" id="slide-out" style="transform: translateX(-100%);">
-        <li><a href=""></a></li>
-      </ul>
-    </aside>
+  <header class="navbar-fixed">
     <nav class="brown darken-3">
       <div class="nav-wrapper container">
-        <a class="button-collapse show-on-medium" data-activates="slide-out"
-          data-turbolinks="false" href="#" id="sidenav">
+        <a href="#" data-activates="slide-out" class="button-collapse show-on-medium">
           <i class="material-icons right">menu</i>
         </a>
         <%= link_to "EverSwift Computers",   root_path, class: "brand-logo right" %>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
           <li><%= link_to "Learn More",   '#company-introduction' %></li>
           <li><%= link_to "Services",   '#services' %></li>
-          <li><%= link_to "Products", '#products' %></li>
-          <li><%= link_to "About Us", '#about' %></li>
+          <li><%= link_to "Products",   '#products' %></li>
+          <li><%= link_to "About Us",   '#about' %></li>
         </ul>
       </div>
     </nav>
 </header>
+<aside>
+  <ul id="slide-out" class="side-nav"  style="transform: translateX(-100%");>
+    <li><a href="#!"><i class="material-icons">account_box</i>Sign Up</a></li>
+    <li><a href="#!"><i class="material-icons">bug_report</i>Login</a></li>
+    <li><div class="divider"></div></li>
+    <li><a href="#company-introduction"><i class="material-icons">help_outline</i>Learn More</a></li>
+    <li><a href="#services"><i class="material-icons">build</i>Services</a></li>
+    <li><a href="#products"><i class="material-icons">laptop</i>Products</a></li>
+    <li><a href="#about"><i class="material-icons">network_wifi</i>About Us</a></li>
+  </ul>
+
+</aside>
 
 <main>
   <div class="hero no-pad-bot cover" id="index-banner">
