@@ -18,6 +18,7 @@ gem 'jbuilder',     '2.7.0'
 gem "font-ionicons-rails"
 
 group :development, :test do
+  gem 'pg', '0.20.0'
   gem 'byebug',  '9.0.6', platform: :mri
 end
 
@@ -36,7 +37,7 @@ group :test do
 end
 
 group :production do
-  gem 'pg', '0.18'
+  gem 'pg', '0.20.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
