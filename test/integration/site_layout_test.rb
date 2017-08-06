@@ -10,5 +10,7 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     assert_select "section#services"
     assert_select "section#products"
     assert_select "section#about"
+    get signup_path
+    assert_select "title", full_title("Sign Up")
   end
 end
