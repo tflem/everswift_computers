@@ -4,6 +4,7 @@
 
 * Ruby on Rails 5
 * HTML
+* SASS
 * jQuery
 * PostgreSQL
 * Materialize CSS
