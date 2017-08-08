@@ -13,9 +13,6 @@
 !/log/.keep
 !/tmp/.keep
 
-# Secrets
-/config/secrets.yml
-
 /node_modules
 /yarn-error.log
 
