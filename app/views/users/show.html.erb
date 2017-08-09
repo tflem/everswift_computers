@@ -1,3 +1,5 @@
-<h4>Welcome, <%= @user.name %>, <%= @user.email %>,
-    <%= @user.created_at %>, <%= @user.updated_at %>
-    <%= Time.now %></h4>
+<% provide(:title, @user.name) %>
+<h1 class="valign-wrapper">
+  <%= gravatar_for @user %>
+  <%= @user.name %>
+</h1>
