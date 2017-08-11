@@ -14,7 +14,7 @@ $linkedin-blue: #0077B5;
 $github-blue: #4078C0;
 $red-heart: #E74C3C;
 $white: #FFF;
-$black: #000;
+$black: #16171D;
 $secondary-bg: #F1F1F1;
 
 @mixin box_sizing {
@@ -133,6 +133,18 @@ h6 {
 .our-products img:hover { opacity: 0.8; }
 
 .about-us p { font-size: 100%; }
+
+/* label focus color */
+ .input-field input:focus + label {
+   color: $dark-brown !important;
+ }
+ /* label underline focus color */
+ .row .input-field input:focus {
+   border-bottom: 1px solid $dark-brown !important;
+   box-shadow: 0 1px 0 0 $dark-brown !important;
+ }
+
+
 
 /* -------------------------------------------- */
 /* Footer */
