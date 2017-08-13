@@ -45,7 +45,7 @@ $secondary-bg: #F1F1F1;
 *, *:before, *:after { box-sizing: inherit; }
 
 html,
-body {
+body, {
   background-color: $white;
   color: $black;
   font-family: 'Arimo', sans-serif;
@@ -134,17 +134,27 @@ h6 {
 
 .about-us p { font-size: 100%; }
 
-/* label focus color */
+/* -------------------------------------------- */
+/* Forms */
+/* -------------------------------------------- */
+
+.x_style {
+    position: absolute;
+    right: 10px;
+    font-size: 200%;
+    color: $white;
+    cursor: pointer;
+}
+
+/* Label focus color */
  .input-field input:focus + label {
    color: $dark-brown !important;
  }
- /* label underline focus color */
+ /* Label underline focus color */
  .row .input-field input:focus {
    border-bottom: 1px solid $dark-brown !important;
    box-shadow: 0 1px 0 0 $dark-brown !important;
  }
-
-
 
 /* -------------------------------------------- */
 /* Footer */

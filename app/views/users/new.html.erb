@@ -1,40 +1,38 @@
 <% provide(:title, 'Sign Up') %>
 <h2 class="center-align">Sign Up</h2>
 
-<div class="valign-wrapper row sign-up-form">
-  <div class="col card hoverable z-depth-1 grey lighten-4 row; s10 pull-s1 pull-m3 l4 pull-l4">
-    <form>
-      <div class="form-content">
-        <div class="row">
-          <div class="input-field col s12">
-            <%= form_for(@user) do |f| %>
-              <%= f.label :name %>
-              <%= f.text_field :name %>
-          </div>
-       </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <%= f.label :email %>
-          <%= f.email_field :email %>
-        </div>
+<%= form_for(@user) do |f| %>
+    <%= render 'shared/error_messages' %>
+
+<div class="valign-wrapper row">
+  <div class="col s8 pull-s2 card hoverable z-depth-1 grey lighten-4">
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control' %>
       </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <%= f.label :password %>
-          <%= f.password_field :password %>
-       </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <%= f.label :password_confirmation, "Password Confirmation" %>
-          <%= f.password_field :password_confirmation %>
-        </div>
-      </div>
-      <div class="row">
-          <%= f.submit "Create account", class: "col s12 btn waves-effect brown darken-3" %>
-      </div>
-      <% end %>
-    </div>
-  </form>
+   </div>
+   <div class="row">
+     <div class="input-field col s12">
+       <%= f.label :email %>
+       <%= f.email_field :email, class: 'form-control' %>
+     </div>
+   </div>
+   <div class="row">
+     <div class="input-field col s12">
+       <%= f.label :password %>
+       <%= f.password_field :password, class: 'form-control' %>
+     </div>
+   </div>
+   <div class="row">
+     <div class="input-field col s12">
+       <%= f.label :password_confirmation, "Password Confirmation" %>
+       <%= f.password_field :password_confirmation, class: 'form-control' %>
+     </div>
+   </div>
+   <div class="row">
+     <%= f.submit "Create account", class: "col s12 btn waves-effect brown darken-3" %>
+   </div>
+  <% end %>
  </div>
 </div>

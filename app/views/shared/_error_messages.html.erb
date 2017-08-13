@@ -1,0 +1,13 @@
+<% if @user.errors.any? %>
+  <div class="valign-wrapper row" id="error_explanation">
+    <div class="col s8 pull-s2 card hoverable z-depth-1 card brown darken-1 white-text">
+      The form contains <%= pluralize(@user.errors.count, "error") %>.
+      <i class="material-icons x_style" id="error_close" aria-hidden="true">close</i>
+      <ul class="collection black-text">
+        <% @user.errors.full_messages.each do |msg| %>
+          <li class="collection-item"><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
