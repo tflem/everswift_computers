@@ -5,8 +5,9 @@
         <a href="#!" data-activates="slide-out" class="button-collapse show-on-small">
           <i class="material-icons right">menu</i>
         </a>
-        <%= link_to "EverSwift Computers",   root_path, class: "brand-logo right" %>
+
         <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <%= link_to "EverSwift Computers",   root_path, class: "brand-logo right" %>
           <li><%= link_to "Learn More",   '#company-introduction' %></li>
           <li><%= link_to "Services",   '#services' %></li>
           <li><%= link_to "Products",   '#products' %></li>
@@ -16,11 +17,12 @@
 </header>
 <aside>
   <ul id="slide-out" class="side-nav"  style="transform: translateX(-100%");>
-    <li><%= link_to signup_path, class: "brown-text text-darken-3 no-padding" do %>Sign Up
-        <i class="material-icons brown-text text-darken-3">account_box</i></li>
-        <% end %>
+    <h4 class="brown-text text-darken-3">EverSwift Computers</h4>
     <li><%= link_to login_path, class: "brown-text text-darken-3 no-padding" do %>Login
         <i class="material-icons brown-text text-darken-3">bug_report</i></li>
+        <% end %>
+    <li><%= link_to signup_path, class: "brown-text text-darken-3 no-padding" do %>Sign Up
+        <i class="material-icons brown-text text-darken-3">account_box</i></li>
         <% end %>
     <div class="divider brown darken-3"></div>
     <li><%= link_to root_path, class: "brown-text text-darken-3 no-padding" do %>Home

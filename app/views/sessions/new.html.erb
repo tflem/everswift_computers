@@ -1,4 +1,4 @@
-<% provide(:title, 'Log In') %>
+<% provide(:title, 'Login') %>
 <h2 class="center-align">Login</h2>
 
 <%= form_for(:session, url: login_path) do |f| %>
@@ -18,7 +18,7 @@
      </div>
    </div>
    <div class="row">
-     <%= f.submit "Log In", class: "col s12 btn waves-effect brown darken-3" %>
+     <%= f.submit "Login", class: "col s12 btn waves-effect brown darken-3" %>
    </div>
   <% end %>
   <p>New user? <%= link_to "Please, sign up!", signup_path, class: "brown-text" %></p>

@@ -23,7 +23,7 @@
                 class: "brown-text text-darken-3" %></li>
             </ul>
           <% else %>
-            <li><%= link_to "Log In", login_path %></li>
+            <li><%= link_to "Login", login_path %></li>
           <% end %>
         </ul>
       </div>
@@ -31,6 +31,7 @@
 </header>
 <aside>
   <ul id="slide-out" class="side-nav"  style="transform: translateX(-100%");>
+    <h4 class="brown-text text-darken-3 ">EverSwift Computers</h4>
     <% if logged_in? %>
       <li><%= link_to "#", class: "brown-text text-darken-3 no-padding" do %>Users
           <i class="material-icons brown-text text-darken-3">account_circle</i></li>
@@ -47,9 +48,12 @@
         <i class="material-icons brown-text text-darken-3">input</i></li>
       <% end %>
     <% else %>
+      <li><%= link_to root_path, class: "brown-text text-darken-3 no-padding" do %>Home
+        <i class="material-icons brown-text text-darken-3">home</i></li>
+      <% end %>
       <li><%= link_to login_path, class: "brown-text text-darken-3
-      no-padding" do %>Logout
-      <i class="material-icons brown-text text-darken-3">input</i></li>
+      no-padding" do %>Login
+        <i class="material-icons brown-text text-darken-3">bug_report</i></li>
       <% end %>
     <% end %>
 </aside>
