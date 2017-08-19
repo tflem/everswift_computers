@@ -87,6 +87,13 @@ section {
     border: 1px solid $white;
 }
 
+/* ------ Dropdown Menu ------ */
+
+.dropdown-content ul {
+  background-color: $secondary-bg;
+  color: $dark-brown;
+}
+
 /* ------ Headings ------ */
 
 h2 {

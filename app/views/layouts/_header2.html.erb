@@ -1,0 +1,55 @@
+<!-- Header -->
+  <header class="navbar-fixed">
+    <nav class="brown darken-3">
+      <div class="nav-wrapper container">
+        <a href="#!" data-activates="slide-out" class="button-collapse show-on-small">
+          <i class="material-icons right">menu</i>
+        </a>
+        <%= link_to "EverSwift Computers",   root_path, class: "brand-logo right" %>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li><%= link_to "Home",   root_path %></li>
+          <% if logged_in? %>
+            <li><%= link_to "Users", '#!' %></li>
+            <li><a class="dropdown-button" data-beloworigin="true" href="#!"
+               data-activates="dropdown">
+              Account<i class="material-icons right">arrow_drop_down</i>
+            </a></li>
+            <ul id="dropdown" class="dropdown-content">
+              <li><%= link_to "Profile", current_user,
+                class: "brown-text text-darken-3" %></li>
+              <li><%= link_to "Settings", '#!', class: "brown-text text-darken-3" %></li>
+              <li class="divider brown darken-3"></li>
+              <li><%= link_to "Log Out", logout_path, method: :delete,
+                class: "brown-text text-darken-3" %></li>
+            </ul>
+          <% else %>
+            <li><%= link_to "Log In", login_path %></li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+</header>
+<aside>
+  <ul id="slide-out" class="side-nav"  style="transform: translateX(-100%");>
+    <% if logged_in? %>
+      <li><%= link_to "#", class: "brown-text text-darken-3 no-padding" do %>Users
+          <i class="material-icons brown-text text-darken-3">account_circle</i></li>
+      <% end %>
+      <li><%= link_to current_user, class: "brown-text text-darken-3 no-padding" do %>Profile
+        <i class="material-icons brown-text text-darken-3">web</i></li>
+      <% end %>
+      <li><%= link_to "#", class: "brown-text text-darken-3 no-padding" do %>Settings
+        <i class="material-icons brown-text text-darken-3">settings_applications</i></li>
+      <% end %>
+      <div class="divider brown darken-3"></div>
+      <li><%= link_to logout_path, method: :delete, class: "brown-text text-darken-3
+        no-padding" do %>Logout
+        <i class="material-icons brown-text text-darken-3">input</i></li>
+      <% end %>
+    <% else %>
+      <li><%= link_to login_path, class: "brown-text text-darken-3
+      no-padding" do %>Logout
+      <i class="material-icons brown-text text-darken-3">input</i></li>
+      <% end %>
+    <% end %>
+</aside>

@@ -6,16 +6,15 @@
     <%= render 'layouts/shim' %>
   </head>
 
+<% if current_page?(root_path) %>
   <body>
     <%= render 'layouts/header' %>
-      <% flash.each do |message_type, message| %>
-        <%= javascript_tag "Materialize.toast('#{message}', 4000, 'rounded')" %>
-      <% end %>
     <%= yield %>
    <%= render 'layouts/footer' %>
    <%= debug(params) if Rails.env.development? %>
    <script>
    $(document).ready(function(){
+
        // Initialize smooth scroll
        $('.scrollspy').scrollSpy();
 
@@ -26,13 +25,34 @@
          }
        );
        $('.collapsible').collapsible();
-
-       // Initialize error close on click
-       $('#error_close').click(function(){
-         $('#error_explanation').fadeOut('slow', function() {
-       });
-    });
   });
   </script>
- </body>
+</body>
+<% else %>
+  <body>
+    <%= render 'layouts/header2' %>
+    <% flash.each do |message_type, message| %>
+      <%= javascript_tag "Materialize.toast('#{message}', 4000, 'rounded')" %>
+    <% end %>
+      <%= yield %>
+    <%= render 'layouts/footer' %>
+    <script>
+     $(document).ready(function(){
+
+         // Initialize collapse button
+         $('.button-collapse').sideNav({
+             menuWidth: 240, // Default is 240
+             closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+           }
+         );
+         $('.collapsible').collapsible();
+         // Initialize error close on click
+         $('#error_close').click(function(){
+           $('#error_explanation').fadeOut('slow', function() {
+         });
+      });
+    });
+    </script>
+</body>
+<% end %>
 </html>
