@@ -14,9 +14,12 @@
    <div class="row">
      <div class="input-field col s12">
        <%= f.label :password %>
-       <%= f.password_field :password, class: 'form-control' %>
-     </div>
+       <%= f.password_field :password, class: 'form-control' %>       
+     </div>            
+       <%= f.check_box :remember_id, id:'remember_id' %>
+       <%= f.label 'remember_me_on_this_device', for: 'remember_id', id:'remember_me brown darken-3' %>       
    </div>
+       
    <div class="row">
      <%= f.submit "Login", class: "col s12 btn waves-effect brown darken-3" %>
    </div>
