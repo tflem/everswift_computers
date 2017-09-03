@@ -18,7 +18,8 @@
             <ul id="dropdown" class="dropdown-content">
               <li><%= link_to "Profile", current_user,
                 class: "brown-text text-darken-3" %></li>
-              <li><%= link_to "Settings", '#!', class: "brown-text text-darken-3" %></li>
+              <li><%= link_to "Settings", edit_user_path(current_user),
+                class: "brown-text text-darken-3" %></li>
               <li class="divider brown darken-3"></li>
               <li><%= link_to "Log Out", logout_path, method: :delete,
                 class: "brown-text text-darken-3" %></li>
@@ -40,7 +41,7 @@
       <li><%= link_to current_user, class: "brown-text text-darken-3 no-padding" do %>Profile
         <i class="material-icons brown-text text-darken-3">web</i></li>
       <% end %>
-      <li><%= link_to "#", class: "brown-text text-darken-3 no-padding" do %>Settings
+      <li><%= link_to edit_user_path(current_user), class: "brown-text text-darken-3 no-padding" do %>Settings
         <i class="material-icons brown-text text-darken-3">settings_applications</i></li>
       <% end %>
       <div class="divider brown darken-3"></div>
