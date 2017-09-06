@@ -24,4 +24,9 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_not flash.empty?
     assert_redirected_to login_url
   end
+
+  test "should redirect to login when not logged in" do
+    get users_path
+    assert_redirected_to login_url
+  end
 end
