@@ -55,6 +55,8 @@ GEM
     concurrent-ruby (1.0.5)
     erubi (1.6.1)
     execjs (2.7.0)
+    faker (1.7.3)
+      i18n (~> 0.5)
     ffi (1.9.18)
     font-ionicons-rails (2.0.1.5)
       railties (>= 3.2, < 6.0)
@@ -203,6 +205,7 @@ DEPENDENCIES
   bcrypt (= 3.1.11)
   byebug (= 9.0.6)
   coffee-rails (= 4.2.2)
+  faker (= 1.7.3)
   font-ionicons-rails
   guard (= 2.13.0)
   guard-minitest (= 2.4.4)
