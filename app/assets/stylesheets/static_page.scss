@@ -145,11 +145,23 @@ h5 {
 
 .users {
   list-style: none;
-  margin: 0;
+  width: 70%;
+  margin-left: 15%;
   li {
     overflow: auto;
-    padding: 10px 0;
+    padding: 20px 0;
     border-bottom: 1px solid $secondary-bg;
+  }
+}
+
+/* ------ Pagination ------ */
+
+.pagination {
+  width: 70%;
+  margin-left: 15%;
+  padding: 15px 0;
+  a li.active {
+    color: $dark-brown;
   }
 }
 
