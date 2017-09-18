@@ -39,4 +39,19 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     get users_path
     assert_redirected_to login_url
   end
+
+  test "should redirect delete action when not logged in" do
+    assert_no_difference "User.count" do
+      delete user_path(@user)
+    end
+    assert_redirected_to login_url
+  end
+
+  test "should redirect delete action when logged in as non-admin" do
+    log_in_as(@other_user)
+    assert_no_difference "User.count" do
+      delete user_path(@user)
+    end
+    assert_redirected_to root_url
+  end
 end
