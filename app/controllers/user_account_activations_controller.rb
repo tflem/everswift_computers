@@ -1,0 +1,2 @@
+class UserAccountActivationsController < ApplicationController
+end
