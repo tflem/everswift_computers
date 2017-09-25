@@ -18,9 +18,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      log_in @user
-      flash[:success] = "Welcome to EverSwift Computers!"
-      redirect_to @user
+      UserMailer.account_activation(@user).deliver_now
+      flash[:success] = "Please check your email to activate the account!"
+      redirect_to login_url
     else
       render "new"
     end
@@ -60,7 +60,7 @@ class UsersController < ApplicationController
         flash[:danger] = "Please Log In."
         redirect_to login_url
       end
-    end    
+    end
 
     # Confirms correct user
     def correct_user
