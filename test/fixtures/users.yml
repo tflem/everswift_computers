@@ -17,7 +17,7 @@ paws:
   name:  Paws McRockin
   email: paws@ff.com
   password_digest: <%= User.digest('password') %>
-  activated: true
+  activated: false
   activated_at: <%= Time.zone.now %>
 
 grandpa:
