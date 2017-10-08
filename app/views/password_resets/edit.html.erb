@@ -1,15 +1,14 @@
 <% provide(:title, "Reset Password") %>
 <h2 class="center-align">Reset Password</h2>
 
+<%= form_for(@user, url: password_reset_path(params[:id])) do |f| %>
+    <%= render "shared/error_messages" %>
+
 <div class="valign-wrapper row">
   <div class="col s8 pull-s2 card hoverable z-depth-1 grey lighten-3">
     <div class="row">
-      <div class="input-field col s12">
-        <%= form_for(@user, url: password_reset_path(params[:id])) do |f| %>
-          <%= render "shared/error_messages" %>
-
+      <div class="input-field col s12">         
           <%= hidden_field_tag :email, @user.email %>
-
           <%= f.label :password %>
           <%= f.password_field :password, class: "form-control" %>
       </div>
