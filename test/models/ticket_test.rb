@@ -4,7 +4,7 @@ class TicketTest < ActiveSupport::TestCase
 
   def setup
     @user = users(:patrick)
-    @ticket = Ticket.new(message: "Cannot restart PC", user_id: @user.id)
+    @ticket = @user.tickets.build(message: "Cannot restart PC")
   end
 
   test "should be valid" do
