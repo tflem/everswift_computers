@@ -25,4 +25,8 @@ class TicketTest < ActiveSupport::TestCase
     @ticket.message = "a" * 141
     assert_not @ticket.valid?
   end
+
+  test "order should be most recent first" do
+    assert_equal tickets(:most_recent), Ticket.first
+  end
 end
