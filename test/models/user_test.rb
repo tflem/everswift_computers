@@ -76,4 +76,12 @@ class UserTest < ActiveSupport::TestCase
   test "authenticated? should return false for a user with nil digest" do
     assert_not @user.authenticated?(:remember, "")
   end
+
+  test "associated tickets should be destroyed" do
+    @user.save
+    @user.tickets.create!(message: "PC won't boot")
+    assert_difference "Ticket.count", -1 do
+      @user.destroy
+    end
+  end
 end
