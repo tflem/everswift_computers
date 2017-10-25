@@ -1,15 +1,15 @@
-keyboard:
-  message: "I just ate my keyboard!"
-  created_at: <%= 10.minutes.ago %>
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-missing_mouse:
-  message: "Mouse has been missing for 24 hours."
-  created_at: <%= 3.years.ago %>
+one:
+  category: MyString
+  title: MyString
+  message: MyText
+  status: MyString
+  user: one
 
-memory_leak:
-  message: "Memory has spilled all over the floor."
-  created_at: <%= 2.hours.ago %>
-
-most_recent:
-  message: "This a test of the emergency broadcast system."
-  created_at: <%= Time.zone.now %>
+two:
+  category: MyString
+  title: MyString
+  message: MyText
+  status: MyString
+  user: two

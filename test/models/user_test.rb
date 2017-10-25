@@ -80,6 +80,7 @@ class UserTest < ActiveSupport::TestCase
   test "associated tickets should be destroyed" do
     @user.save
     @user.tickets.create!(message: "PC won't boot")
+    @user.categories.create!(name: "Hardware")
     assert_difference "Ticket.count", -1 do
       @user.destroy
     end
