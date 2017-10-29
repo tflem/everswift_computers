@@ -17,3 +17,16 @@ User.create!(name: name,
             activated: true,
             activated_at: Time.zone.now)
 end
+
+users = User.order(:created_at).take(6)
+50.times do
+  category = "Technical"
+  title = Faker::Lorem.sentence(1)
+  message = Faker::Lorem.sentence(4)
+  status = "Open"
+  users.each { |user| user.tickets.create!(category: category,
+                                           title: title,
+                                           message: message,
+                                           status: status
+                                           ) }
+end
