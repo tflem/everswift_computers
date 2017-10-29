@@ -21,8 +21,8 @@ class TicketTest < ActiveSupport::TestCase
     assert_not @ticket.valid?
   end
 
-  test "message should be at most 50 characters" do
-    @ticket.message = "a" * 51
+  test "message should be at most 150 characters" do
+    @ticket.message = "a" * 151
     assert_not @ticket.valid?
   end
 
