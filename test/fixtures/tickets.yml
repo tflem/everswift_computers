@@ -1,24 +1,33 @@
 one:
   category: "Sales"
   title: "Missing RAM"
-  message: "I'm missing a stick of RAM"
+  message: "I am missing a stick of RAM"
   status: "Open"
-  user: one
   created_at: <%= 10.minutes.ago %>
-
+  user: patrick
 
 two:
   category: "Technical"
   title: "PC will not boot up"
   message: "Tried several times but PC not booting"
   status: "Open"
-  user: two
   created_at: <%= 2.hours.ago %>
+  user: patrick
 
 most_recent:
   category: "Technical"
   title: "Blue screen of death"
   message: "PC has blank screen after purchase"
   status: "Open"
-  user: three
   created_at: <%= Time.zone.now %>
+  user: patrick
+
+<% 30.times do |n| %>
+ticket_<%= n %>:
+  category: "Technical"
+  title: <%= Faker::Lorem.sentence(1) %>
+  message: <%= Faker::Lorem.sentence(4) %>
+  status: "Open"
+  created_at: <%= 12.days.ago %>
+  user: patrick
+<% end %>
