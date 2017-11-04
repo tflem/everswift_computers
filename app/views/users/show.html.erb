@@ -3,6 +3,9 @@
   <%= gravatar_for @user %>
   <%= @user.name %>
 </h1>
+<%= link_to "Create New Ticket", new_ticket_path,
+    class: "brown-text text-darken-3" %>
+
 <% if @user.tickets.any? %>
   <table class="striped">
     <thead>
@@ -19,4 +22,5 @@
       <%= will_paginate @tickets %>
 <% end %>
     </tbody>
+
   </table>
