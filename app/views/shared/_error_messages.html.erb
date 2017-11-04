@@ -1,19 +1,17 @@
-<% if @user.errors.any? %>  
+<% if object.errors.any? %>
 
-  <div class="valign-wrapper row" id="error_explanation">       
-    <div class="col s8 pull-s2 card hoverable z-depth-1 card brown darken-1 white-text">  
+  <div class="valign-wrapper row" id="error_explanation">
+    <div class="col s8 pull-s2 card hoverable z-depth-1 card brown darken-1 white-text">
       <i class="material-icons x_style" id="error_close" aria-hidden="true">close</i>
-      <div class="alert">   
-        The form has <%= pluralize(@user.errors.count, "error") %>.  
-      </div>       
-        
+      <div class="alert">
+        The form has <%= pluralize(object.errors.count, "error") %>.
+      </div>
+
     <ul class="collection black-text">
-      <% @user.errors.full_messages.each do |msg| %>
+      <% object.errors.full_messages.each do |msg| %>
         <li class="collection-item"><%= msg %></li>
       <% end %>
-    </ul>    
-    </div>     
+    </ul>
+    </div>
   </div>
 <% end %>
-
-
