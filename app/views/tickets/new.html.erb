@@ -1,5 +1,5 @@
 <% provide(:title, 'Create Ticket') %>
-<h2 class="center-align">Create a Ticket</h2>
+<h2 class="center-align">Create New Ticket</h2>
 
 <%= form_for(@ticket) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
@@ -9,7 +9,7 @@
     <div class="row">
       <div class="input-field col s12">
         <%= f.select(:category, ["Sales", "Technical"],
-          { prompt: "Select Ticket Category", disabled: "" },
+          { prompt: "Select Ticket Category" },
           { class: "grey-text" }) %>
       </div>
    </div>
