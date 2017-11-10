@@ -1,0 +1,37 @@
+<%= form_for(@ticket) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+<div class="valign-wrapper row">
+  <div class="col s8 pull-s2 card hoverable z-depth-1 grey lighten-3">
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.select(:category, ["Sales", "Technical"],
+          { prompt: "Select Ticket Category" },
+          { class: "grey-text" }) %>
+      </div>
+   </div>
+   <div class="row">
+     <div class="input-field col s12">
+       <%= f.label :title %>
+       <%= f.text_field :title, class: "form-control" %>
+     </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.select(:status, ["Open"],
+        { prompt: "Select Ticket Status" },
+        { class: "grey-text" }) %>
+    </div>
+  </div>
+   <div class="row">
+     <div class="input-field col s12">
+       <%= f.label :message %>
+       <%= f.text_area :message, class: "materialize-textarea" %>
+     </div>
+   </div>
+
+
+   <div class="row">
+     <%= f.submit "Create Ticket", class: "col s12 btn waves-effect brown darken-3" %>
+   </div>
+  <% end %>
