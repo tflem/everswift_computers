@@ -5,22 +5,6 @@
 </h1>
 <%= link_to "Create New Ticket", new_ticket_path,
     class: "brown-text text-darken-3" %>
-
-<% if @user.tickets.any? %>
-  <table class="striped">
-    <thead>
-      <tr>
-        <th><%= @Category %>Category</th>
-        <th><%= @Title %>Title</th>
-        <th><%= @Message %>Message</th>
-        <th><%= @Status %>Status</th>
-        <th><%= @Created_At %>Created At</th>
-      </tr>
-    </thead>
-    <tbody>
-      <%= render @tickets %>
-      <%= will_paginate @tickets %>
-<% end %>
-    </tbody>
-
-  </table>
+<%= will_paginate @tickets %>
+<%= render "tickets/ticket" %>
+<%= will_paginate @tickets %>
