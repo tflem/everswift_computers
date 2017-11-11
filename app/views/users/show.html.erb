@@ -1,10 +1,11 @@
 <% provide(:title, @user.name) %>
-<h1 class="valign-wrapper">
-  <%= gravatar_for @user %>
+<h1 class="center-align">
   <%= @user.name %>
 </h1>
-<%= link_to "Create New Ticket", new_ticket_path,
-    class: "brown-text text-darken-3" %>
+<h5 class="center-align">
+  -<%= link_to "Create New Ticket", new_ticket_path,
+      class: "brown-text text-darken-3" %>-
+</h5>
 <%= will_paginate @tickets %>
 <%= render "tickets/ticket" %>
 <%= will_paginate @tickets %>
