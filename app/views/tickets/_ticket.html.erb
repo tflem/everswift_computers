@@ -1,12 +1,12 @@
 <% if @user.tickets.any? %>
-  <table class="striped">
+  <table class="tickets bordered striped centered">
     <thead>
       <tr>
         <th><%= @Category %>Category</th>
         <th><%= @Title %>Title</th>
         <th><%= @Message %>Message</th>
         <th><%= @Status %>Status</th>
-        <th><%= @Created_At %>Created At</th>
+        <th><%= @Created_At %>Created</th>
       </tr>
     </thead>
     <tbody>
