@@ -29,9 +29,7 @@
        <%= f.text_area :message, class: "materialize-textarea" %>
      </div>
    </div>
-
-
    <div class="row">
-     <%= f.submit "Create Ticket", class: "col s12 btn waves-effect brown darken-3" %>
+     <%= f.submit yield(:button_text), class: "col s12 btn waves-effect brown darken-3" %>
    </div>
   <% end %>
