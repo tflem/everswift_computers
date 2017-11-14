@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
-  get    '/tickets', to: 'tickets#new'
+  get    '/tickets/new', to: 'tickets#new'
   post   '/tickets', to: 'tickets#create'
+  get    '/tickets/:id/', to: 'tickets#edit'
   resources :users
   resources :user_account_activations, only: [:edit]
   resources :password_resets,          only: [:new, :create, :edit, :update]
