@@ -8,7 +8,7 @@ class UsersTicketTest < ActionDispatch::IntegrationTest
 
   test "invalid ticket information" do
     log_in_as(@current_user)
-    get tickets_path
+    get new_ticket_path
     assert_no_difference "Ticket.count" do
       post tickets_path, params: { ticket: { category: "",
                                              title:    "Missing RAM",
@@ -22,7 +22,7 @@ class UsersTicketTest < ActionDispatch::IntegrationTest
 
  test "valid ticket information" do
    log_in_as(@current_user)
-   get tickets_path
+   get new_ticket_path
    assert_difference "Ticket.count", 1 do
      post tickets_path, params: { ticket: { category: "Sales",
                                             title:    "Missing RAM",
