@@ -53,7 +53,7 @@ class UsersController < ApplicationController
                                    :password_confirmation)
     end
 
-    # Before filters    
+    # Before filters
 
     # Confirms correct user
     def correct_user
