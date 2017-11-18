@@ -3,7 +3,7 @@
     <thead>
       <tr>
         <th><%= @Category %>Category</th>
-        <th><%= @Title %>Title</th>
+        <th class="center-align"><%= @Title %>Title</th>
         <th><%= @Message %>Message</th>
         <th><%= @Status %>Ticket Status</th>
         <th><%= @Created_At %>Created</th>
@@ -14,10 +14,10 @@
       <% @user.tickets.order("updated_at DESC").each do |ticket| %>
         <tr>
           <td><%= ticket.category %></td>
-          <td>
+          <td class="center-align">
             <%= link_to ticket.title, ticket %>
             <a href="/tickets/<%= ticket.id %>/edit">
-              <i class="material-icons">edit</i>
+              <i class="ion-compose"></i>
             <a/>
          </td>
           <td><%= ticket.message %></td>
