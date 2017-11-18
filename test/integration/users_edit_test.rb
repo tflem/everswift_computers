@@ -5,7 +5,7 @@ class UsersEditTest < ActionDispatch::IntegrationTest
   def setup
     @user = users(:patrick)
   end
-  
+
   test "unsuccessful edit" do
     log_in_as(@user)
     get edit_user_path(@user)
@@ -23,8 +23,8 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     log_in_as(@user)
     assert_redirected_to edit_user_url(@user)
     assert_nil session[:forwarding_url]
-    name  = "Zippy McNutty"
-    email = "zippy@ff.com"
+    name  = "Patrick Example"
+    email = "patrick@example.com"
     patch user_path(@user), params: { user: { name:  name,
                                               email: email,
                                               password:              "",
@@ -33,6 +33,6 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     assert_redirected_to @user
     @user.reload
     assert_equal name,  @user.name
-    assert_equal email, @user.email   
+    assert_equal email, @user.email
   end
 end

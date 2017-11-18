@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  extend FriendlyId
+  friendly_id :name, use: :slugged
   has_many :tickets, dependent: :destroy
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save   :downcase_email
@@ -10,6 +12,10 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, presence: true, length: { minimum: 8 }, allow_nil: true
+
+  def should_generate_new_friendly_id?
+    false if Rails.env.test?
+  end
 
   # Returns hash digest of given string
   def User.digest(string)

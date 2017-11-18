@@ -81,7 +81,7 @@ class UserTest < ActiveSupport::TestCase
     @user.save
     @user.tickets.create!(category: "Technical",
                           title: "PC won't boot",
-                          status: "Open",   
+                          status: "Open",
                           message: "PC stalls at startup screen, please help.")
     assert_difference "Ticket.count", -1 do
       @user.destroy

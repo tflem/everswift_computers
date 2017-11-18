@@ -24,6 +24,7 @@ gem 'font-ionicons-rails'
 group :development, :test do
   gem 'pg', '0.20.0'
   gem 'byebug',  '9.0.6', platform: :mri
+  gem 'friendly_id',   '~> 5.1.0'
 end
 
 group :development do

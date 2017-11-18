@@ -16,7 +16,7 @@ class TicketsController < ApplicationController
   end
 
   def edit
-    @ticket = Ticket.find(params[:id])
+    @ticket = Ticket.friendly.find(params[:id])
   end
 
   def update
