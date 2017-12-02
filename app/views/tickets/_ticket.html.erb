@@ -5,7 +5,7 @@
         <th><%= @Category %>Category</th>
         <th class="center-align"><%= @Title %>Title</th>
         <th><%= @Message %>Message</th>
-        <th><%= @Status %>Ticket Status</th>
+        <th><%= @Status %>Status</th>
         <th><%= @Created_At %>Created</th>
         <th><%= @Updated_At %>Updated</th>
       </tr>
@@ -15,10 +15,10 @@
         <tr>
           <td><%= ticket.category %></td>
           <td class="center-align">
-            <%= link_to ticket.title, ticket %>
+            <%= link_to ticket.title, edit_ticket_path(ticket.id) %>
             <a href="/tickets/<%= ticket.id %>/edit">
-              <i class="ion-compose"></i>
-            <a/>
+              <span class="ion-compose" aria-hidden="true"></span>
+            </a>
          </td>
           <td><%= ticket.message %></td>
           <td class="red-text"><%= ticket.status %></td>
