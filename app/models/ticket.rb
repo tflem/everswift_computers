@@ -1,6 +1,4 @@
 class Ticket < ApplicationRecord
-  extend FriendlyId
-  friendly_id :title, use: :slugged
   belongs_to :user
   default_scope -> { order(created_at: :desc) }
   validates :user_id, presence: true

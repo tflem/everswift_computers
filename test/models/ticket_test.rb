@@ -5,9 +5,9 @@ class TicketTest < ActiveSupport::TestCase
   def setup
     @user = users(:patrick)
     @ticket = @user.tickets.build(category: "Sales",
-                                  title: "Missing RAM",
-                                  status: "Open",
-                                  message: "Need to buy RAM")
+                                  title:    "Missing RAM",
+                                  status:   "Open",
+                                  message:  "Need to buy RAM")
   end
 
   test "should be valid" do

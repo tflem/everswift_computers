@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.friendly.find(params[:id])
+    @user = User.find(params[:id])
     @tickets = @user.tickets.paginate(page: params[:page])
     redirect_to login_url and return unless @user.activated
   end
@@ -57,7 +57,7 @@ class UsersController < ApplicationController
 
     # Confirms correct user
     def correct_user
-      @user = User.friendly.find(params[:id])
+      @user = User.find(params[:id])
       redirect_to(root_url) unless current_user?(@user)
     end
 
