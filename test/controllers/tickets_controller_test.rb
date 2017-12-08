@@ -36,4 +36,11 @@ class TicketsControllerTest < ActionDispatch::IntegrationTest
     assert_not flash.empty?
     assert_redirected_to login_url
   end
+
+  test "should redirect destroy when not logged in" do
+    assert_no_difference "Ticket.count" do
+      delete ticket_path(@ticket)
+    end
+    assert_redirected_to login_url
+  end
 end
