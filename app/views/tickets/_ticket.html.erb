@@ -24,6 +24,12 @@
           <td class="red-text"><%= ticket.status %></td>
           <td><%= time_ago_in_words(ticket.created_at).titleize %> Ago.</td>
           <td><%= time_ago_in_words(ticket.updated_at).titleize %> Ago.</td>
+          <td><%= link_to "Delete", ticket, method: :delete,
+                                            data: { confirm: "Are You Sure?" } %>
+              <a href="/tickets/<%= ticket.id %>">
+              <span class="ion-trash-b" aria-hidden="true"></span>
+              </a>
+          </td>
         </tr>
       <% end %>
   <% end %>
