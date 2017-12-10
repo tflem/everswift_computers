@@ -38,6 +38,6 @@ class UsersIndexTest < ActionDispatch::IntegrationTest
   test "should only show activated users" do
     log_in_as(@non_admin)
     get user_path(@non_activated_user)
-    assert_redirected_to login_url
+    assert_redirected_to @non_admin
   end
 end

@@ -8,6 +8,7 @@ class UsersProfileTest < ActionDispatch::IntegrationTest
   end
 
   test "profile display" do
+    log_in_as(@user)
     get user_path(@user)
     assert_template "users/show"
     assert_select "title", full_title(@user.name)
@@ -15,7 +16,7 @@ class UsersProfileTest < ActionDispatch::IntegrationTest
     assert_match @user.tickets.count.to_s, response.body
     assert_select "div.pagination", count: 2
     @user.tickets.paginate(page: 1).each do |ticket|
-      assert_match ticket.message, response.body      
+      assert_match ticket.message, response.body
     end
   end
 end

@@ -5,6 +5,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   def setup
     @user       = users(:patrick)
     @other_user = users(:dash)
+    @another_user = users(:paws)
   end
 
   test "should get new" do
@@ -68,5 +69,11 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
       delete user_path(@user)
     end
     assert_redirected_to root_url
+  end
+
+  test "should redirect when logged in user accesses other users profile" do
+    log_in_as(@other_user)
+    get user_path(@another_user)
+    assert_redirected_to @other_user
   end
 end
