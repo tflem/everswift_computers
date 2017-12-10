@@ -33,4 +33,17 @@ class UsersTicketTest < ActionDispatch::IntegrationTest
    assert_template "users/show"
    assert_not flash.empty?
  end
+
+ test "proper ticket deletion" do
+   log_in_as(@current_user)
+   get user_path(@current_user)
+   assert_select "a", text: "Delete"
+   first_ticket = @current_user.tickets.paginate(page: 1).first
+   assert_difference "Ticket.count", -1 do
+      delete ticket_path(first_ticket)
+   end
+   assert_not flash.empty?
+   assert_equal "Your Ticket Has Been Deleted.", flash[:success]
+   assert_redirected_to @current_user
+ end
 end

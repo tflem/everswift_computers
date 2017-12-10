@@ -17,6 +17,9 @@ class TicketsController < ApplicationController
   end
 
   def destroy
+    Ticket.find(params[:id]).destroy
+    flash[:success] = "Your Ticket Has Been Deleted."
+    redirect_to current_user
   end
 
   def edit
